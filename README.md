@@ -1,5 +1,5 @@
 # Ex.08 Design of a Standard Calculator
-## Date:
+## Date:24.4.24
 
 ## AIM:
 To design a web application for a standard calculator with minimum five operations.
@@ -25,8 +25,168 @@ Validate the HTML and CSS code.
 Publish the website in the given URL.
 
 ## PROGRAM :
+```
+calc.html
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Calculator</title>
+    
+        <style type="text/css">
+            body{
+                background-image: linear-gradient(white,blue);
+                height: 150px;                
+            }
+        </style>
+        
+        <script>
+        function calculate(args)
+        {
+            res = document.getElementById("result");
+            expression = res.innerText;
+            cmd = args.srcElement.innerText;
+            if(cmd == "=")
+            {
+                expression = "" + eval(expression)
+            }
+            else if(cmd == "C")
+            {
+                expression=""
+            }
+            else if(cmd == "DEL")
+            {
+                expression = expression.slice(0, -1);
+
+            }
+            else if(cmd == "%")
+            {
+                expression = "" + Math.sqrt(eval(expression));
+            }
+            else if(cmd == "%")
+            {
+                expression = expression % 1;
+            }
+            else if(cmd == "log")
+             {
+        expression = Math.log10(expression);
+           }
+       
+            else{
+                expression = expression + cmd;
+            }
+            res.innerText = expression;
+            
+
+        }
+         
+        </script>
+
+        <style>
+          
+            .calculator-container {
+                width: 400px;
+                
+                background-color:black;
+                margin: 0 auto; 
+                margin-top: 100px;
+                text-align: center;
+
+                
+            }
+
+           
+            button {
+                width: 50px;
+                height: 50px;
+                margin: 10px; 
+                font-size: 20px; 
+                
+                
+                background-color:whitesmoke;
+                color:blue(255, 255, 255); 
+                border: none;
+            }
+
+          
+            #result {
+                
+       background-color:navy;
+    text-align: right;
+    padding-right: 50px;
+    font-size: 20px;
+    margin-bottom: 20px; 
+    border: solid wheat 0.5px;
+    color: white;
+    width: 348px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+            }
+            h1 {
+                padding-top: 10px;
+                color:aquamarine(255, 255, 255);
+                font-size: 50px;
+            }
+            .redd {
+                background-color:red;
+            }
+            .bluee {
+                
+                background-color:lightsalmon;
+            }
+            body {
+                background-color: rgb(184, 216, 24);
+            }
+            #sandhiya sree{
+                text-align: center;
+            }
+                        .calculator-container{
+                margin-bottom: 50px;
+            }
+
+        </style>
+
+    </head>
+<body>
+   
+    <h1 id="SANDHIYA SREE B">Calculator<br>SANDHIYA(212223220093)</h1>
+    <div class="calculator-container">
+        <h2> CALCULATOR</h2>
+        <div id="result">0</div>
+        <button onclick="calculate(event);">7</button>
+        <button onclick="calculate(event);">8</button>
+        <button onclick="calculate(event);">9</button>
+        <button class="orange"  onclick="calculate(event);">/</button>
+        <button class="orange"  onclick="calculate(event);"> DEL </button><br>
+        <button onclick="calculate(event);">4</button>
+        <button onclick="calculate(event);">5</button>
+        <button onclick="calculate(event);">6</button>
+        <button class="orange"  onclick="calculate(event);">*</button>
+        <button class="orange"  onclick="calculate(event);">%</button><br>
+        <button onclick="calculate(event);">1</button>
+        <button onclick="calculate(event);">2</button>
+        <button onclick="calculate(event);">3</button>
+        <button class="orange"  onclick="calculate(event);">-</button>
+        <button class="orange"  onclick="calculate(event);">log</button><br>
+        <button onclick="calculate(event);">0</button>
+        <button onclick="calculate(event);">.</button>
+        <button class="redd" onclick="calculate(event);">C</button>
+        <button class="orange"  onclick="calculate(event);">+</button>
+        <button class="orange" onclick="calculate(event);">=</button><br>
+    </div>
+</div>
+    </body>
+</html>
+```
 
 ## OUTPUT:
+![Screenshot 2024-04-24 090000](https://github.com/Sandhniya/Calc/assets/151395890/500ade71-ecc4-40e6-b0e7-b022d2036984)
+![Screenshot 2024-04-24 090019](https://github.com/Sandhniya/Calc/assets/151395890/01c1cda7-d7f4-4ad3-956b-fbd1394c51b3)
+
+
 
 ## RESULT:
 The program for designing a standard calculator using HTML and CSS is executed successfully.
